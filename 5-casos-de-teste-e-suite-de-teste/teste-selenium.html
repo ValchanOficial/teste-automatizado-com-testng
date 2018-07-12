@@ -1,0 +1,304 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <title>TreinaWeb - Curso de Selenium</title>
+    <meta charset="UTF-8"></meta>
+
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+
+        .form-row {
+            margin-bottom: 10px;
+        }
+
+        #conteudo-cadastro {
+            background-color: lightgray;
+            padding: 30px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark n">
+        <a class="navbar-brand" href="#">TreinaWeb - Selenium</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Cadastro de usuários</h2>
+        <div id="conteudo-cadastro">
+            <div class="alert alert-success" role="alert" id="div-sucesso-cadastro-usuario">
+                Usuário cadastrado com sucesso!
+            </div>
+            <div class="alert alert-danger" role="alert" id="div-erro-cadastro-usuario">
+                Verifique os erros abaixo!
+            </div>
+            <form id="form-teste">
+                <div class="form-row">
+                    <div class="col">
+                        <label>Nome completo:</label>
+                        <input type="text" class="form-control" placeholder="First name" id="txb-nome">
+                        <div class="invalid-feedback" id="div-val-nome">
+                            O nome é obrigatório
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Email:</label>
+                        <input type="email" class="form-control" placeholder="seu@email.com.br" id="txb-email">
+                        <div class="invalid-feedback" id="div-val-email">
+                            O email é obrigatório
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Confirmar email:</label>
+                        <input type="email" class="form-control" placeholder="seu@email.com.br" id="txb-confirmar-email">
+                        <div class="invalid-feedback" id="div-val-confirmar-email">
+                            O email é obrigatório
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Senha:</label>
+                        <input type="password" class="form-control" id="txb-senha">
+                        <div class="invalid-feedback" id="div-val-senha">
+                            A senha é obrigatória
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Confirmar senha:</label>
+                        <input type="password" class="form-control" id="txb-confirmar-senha">
+                        <div class="invalid-feedback" id="div-val-confirmar-senha">
+                            A senha é obrigatória
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Sexo:</label><br>
+                        <label class="custom-control custom-radio">
+                            <input id="rad-sexo-masculino" name="rad-sexo" type="radio" class="custom-control-input" value="M">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Masculino</span>
+                        </label>
+                        <label class="custom-control custom-radio">
+                            <input id="rad-sexo-feminino" name="rad-sexo" type="radio" class="custom-control-input" value="F">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Feminino</span>
+                        </label>
+                        <label class="custom-control custom-radio">
+                            <input id="rad-sexo-nao-comentar" name="rad-sexo" type="radio" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Não quero comentar</span>
+                        </label>
+                        <div class="invalid-feedback" id="div-val-sexo">
+                            O sexo é obrigatório
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Estado:</label>
+                        <select class="form-control" id="sel-estado">
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="AM">Amazonas</option>
+                        </select>
+                        <div class="invalid-feedback" id="div-val-estado">
+                            O estado é obrigatório
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col text-right">
+                        <button type="button" class="btn btn-secondary" id="btn-limpar">Limpar</button>
+                        <button type="button" class="btn btn-success" id="btn-salvar">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <table class="table" id="tbl-usuarios">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            clearForm();
+        });
+
+        $('#btn-limpar').click(() => {
+            clearForm();
+        });
+
+        $('#btn-salvar').click(() => {
+            var someFieldIsInvalid = false;
+            // Nome
+            if ($('#txb-nome').val() == '') {
+                $('#txb-nome').addClass('is-invalid');
+                $('#div-val-nome').show();
+                someFieldIsInvalid = true;
+            } else {
+                $('#txb-nome').removeClass('is-invalid');
+                $('#div-val-nome').hide();
+            }
+
+            // Email
+            var email = $('#txb-email').val(); 
+            if (email == '') {
+                $('#txb-email').addClass('is-invalid');
+                $('#div-val-email').show();
+                someFieldIsInvalid = true;
+            } else if (!isEmail(email)){
+                $('#txb-email').addClass('is-invalid');
+                $('#div-val-email').show();
+                $('#div-val-email').text('Insira um e-mail válido');
+                someFieldIsInvalid = true;
+            } else {
+                $('#div-val-email').hide();
+                $('#txb-email').removeClass('is-invalid');
+            }
+            // Confirmação de email
+            var confirmacaoEmail = $('#txb-confirmar-email').val(); 
+            if (confirmacaoEmail == '') {
+                $('#txb-confirmar-email').addClass('is-invalid');
+                $('#div-val-confirmar-email').show();
+                someFieldIsInvalid = true;
+            } else if (!isEmail(confirmacaoEmail)){
+                $('#txb-confirmar-email').addClass('is-invalid');
+                $('#div-val-confirmar-email').show();
+                $('#div-val-confirmar-email').text('Insira um e-mail válido');
+                someFieldIsInvalid = true;
+            } else {
+                $('#div-val-confirmar-email').hide();
+                $('#txb-confirmar-email').removeClass('is-invalid');
+            }
+            if (email != confirmacaoEmail){
+                $('#txb-email').addClass('is-invalid');
+                $('#div-val-email').show();
+                $('#div-val-email').text('Os e-mails devem ser iguais');
+                someFieldIsInvalid = true;
+            } else {
+                $('#div-val-email').hide();
+                $('#txb-email').removeClass('is-invalid');
+            }
+
+            // Senha
+            var senha = $('#txb-senha').val(); 
+            if (senha == '') {
+                $('#txb-senha').addClass('is-invalid');
+                $('#div-val-senha').show();
+                someFieldIsInvalid = true;
+            } else {
+                $('#div-val-senha').hide();
+                $('#txb-senha').removeClass('is-invalid');
+            }
+            // Confirmação de email
+            var confirmacaoSenha = $('#txb-confirmar-senha').val(); 
+            if (confirmacaoSenha == '') {
+                $('#txb-confirmar-senha').addClass('is-invalid');
+                $('#div-val-confirmar-senha').show();
+                someFieldIsInvalid = true;
+            } else {
+                $('#div-val-confirmar-senha').hide();
+                $('#txb-confirmar-senha').removeClass('is-invalid');
+            }
+            if (senha != confirmacaoSenha){
+                $('#txb-senha').addClass('is-invalid');
+                $('#div-val-senha').show();
+                $('#div-val-senha').text('As senhas devem ser iguais');
+                someFieldIsInvalid = true;
+            } else {
+                $('#div-val-senha').hide();
+                $('#txb-senha').removeClass('is-invalid');
+            }
+            // Sexo
+            if (!$('input[name="rad-sexo"]:checked').val()){
+                someFieldIsInvalid = false;
+                $('input[name="rad-sexo"]').addClass('is-invalid');
+                $('#div-val-sexo').show();
+            } else {
+                $('input[name="rad-sexo"]').removeClass('is-invalid');
+                $('#div-val-sexo').hide();
+            }
+            // Estado
+            if (!$('#sel-estado').val()){
+                someFieldIsInvalid = true;
+                $('#sel-estado').addClass('is-invalid');
+                $('#div-val-estado').show();
+            } else {
+                $('#sel-estado').removeClass('is-invalid');
+                $('#div-val-estado').hide();
+            }
+
+            if (someFieldIsInvalid){
+                $('#div-erro-cadastro-usuario').show();
+                $('#div-sucesso-cadastro-usuario').hide();
+            } else {
+                $('#div-erro-cadastro-usuario').hide();
+                $('#div-sucesso-cadastro-usuario').show();
+                //
+                $('#tbl-usuarios tbody').append(
+                    '<tr>' + 
+                    '   <td>' + $('#txb-nome').val() + '</td>'+
+                    '   <td>' + $('#txb-email').val() + '</td>'+
+                    '</tr>' 
+                );
+            }
+
+        });
+
+        function clearForm() {
+            $('#div-sucesso-cadastro-usuario').hide();
+            $('#div-erro-cadastro-usuario').hide();
+            $('.invalid-feedback').hide();
+            $('input').removeClass('is-invalid');
+            $('input[type!="radio"]').val('');
+            $('select').val('');
+            $('select').removeClass('is-invalid');
+            $('[id^="rad-sexo-"]').prop('checked', false);
+        }
+
+        function isEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+        }
+    </script>
+</body>
+
+</html>
