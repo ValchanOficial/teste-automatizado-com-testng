@@ -10,7 +10,7 @@ public class CadastroUsuarioTest extends TreinaWebSeleniumTestBase{
 	public void setupPage() {
 		setUrl("file:///C:/site-teste/teste-selenium.html");
 	}
-	@Test
+	@Test(priority = 2)
 	public void verificarEmailsDiferentesTest() {
 		getDriver().findElement(By.id("txb-email")).sendKeys("treinaweb@test.com");
 		getDriver().findElement(By.id("txb-confirmar-email")).sendKeys("diferentetreinaweb@test.com");
@@ -19,7 +19,7 @@ public class CadastroUsuarioTest extends TreinaWebSeleniumTestBase{
 		Assert.assertTrue(getDriver().findElement(By.id("div-val-email")).isDisplayed());
 		Assert.assertEquals(getDriver().findElement(By.id("div-val-email")).getText(),"Os e-mails devem ser iguais");
 	}
-	@Test
+	@Test(priority = 1)
 	public void verificarNomeTest() {
 		getDriver().findElement(By.id("txb-nome")).sendKeys("");
 		getDriver().findElement(By.id("btn-salvar")).click();
