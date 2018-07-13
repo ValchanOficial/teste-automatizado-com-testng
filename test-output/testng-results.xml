@@ -1,29 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15600" started-at="2018-07-13T18:27:09Z" finished-at="2018-07-13T18:27:25Z">
+  <suite name="Teste de suites do TestNG" duration-ms="30463" started-at="2018-07-13T18:48:25Z" finished-at="2018-07-13T18:48:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15600" started-at="2018-07-13T18:27:09Z" finished-at="2018-07-13T18:27:25Z">
-      <class name="br.com.treinaweb.selenium.tests.UploadTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.treinaweb.selenium.tests.UploadTest@3bfdc050]" name="setUp" is-config="true" duration-ms="9076" started-at="2018-07-13T18:27:09Z" finished-at="2018-07-13T18:27:18Z">
+    <test name="Pagina de cadastro de usuarios" duration-ms="30463" started-at="2018-07-13T18:48:25Z" finished-at="2018-07-13T18:48:55Z">
+      <class name="br.com.treinaweb.selenium.tests.CadastroUsuarioTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.treinaweb.selenium.tests.CadastroUsuarioTest@604ed9f0]" name="setUp" is-config="true" duration-ms="8703" started-at="2018-07-13T18:48:25Z" finished-at="2018-07-13T18:48:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setupPage()[pri:0, instance:br.com.treinaweb.selenium.tests.UploadTest@3bfdc050]" name="setupPage" is-config="true" duration-ms="3148" started-at="2018-07-13T18:27:18Z" finished-at="2018-07-13T18:27:21Z">
+        <test-method status="PASS" signature="setupPage()[pri:0, instance:br.com.treinaweb.selenium.tests.CadastroUsuarioTest@604ed9f0]" name="setupPage" is-config="true" duration-ms="2700" started-at="2018-07-13T18:48:33Z" finished-at="2018-07-13T18:48:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupPage -->
-        <test-method status="PASS" signature="testUpload()[pri:0, instance:br.com.treinaweb.selenium.tests.UploadTest@3bfdc050]" name="testUpload" duration-ms="1669" started-at="2018-07-13T18:27:21Z" finished-at="2018-07-13T18:27:23Z">
+        <test-method status="PASS" signature="verificarUsuarioPreenchidoTest()[pri:0, instance:br.com.treinaweb.selenium.tests.CadastroUsuarioTest@604ed9f0]" name="verificarUsuarioPreenchidoTest" duration-ms="1171" started-at="2018-07-13T18:48:36Z" finished-at="2018-07-13T18:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarUsuarioPreenchidoTest -->
+        <test-method status="PASS" signature="setupPage()[pri:0, instance:br.com.treinaweb.selenium.tests.CadastroUsuarioTest@604ed9f0]" name="setupPage" is-config="true" duration-ms="116" started-at="2018-07-13T18:48:37Z" finished-at="2018-07-13T18:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPage -->
+        <test-method status="PASS" signature="verificarNomeTest()[pri:0, instance:br.com.treinaweb.selenium.tests.CadastroUsuarioTest@604ed9f0]" name="verificarNomeTest" duration-ms="447" started-at="2018-07-13T18:48:37Z" finished-at="2018-07-13T18:48:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarNomeTest -->
+        <test-method status="PASS" signature="setupPage()[pri:0, instance:br.com.treinaweb.selenium.tests.CadastroUsuarioTest@604ed9f0]" name="setupPage" is-config="true" duration-ms="69" started-at="2018-07-13T18:48:38Z" finished-at="2018-07-13T18:48:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPage -->
+        <test-method status="PASS" signature="verificarEmailsDiferentesTest()[pri:0, instance:br.com.treinaweb.selenium.tests.CadastroUsuarioTest@604ed9f0]" name="verificarEmailsDiferentesTest" duration-ms="485" started-at="2018-07-13T18:48:38Z" finished-at="2018-07-13T18:48:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarEmailsDiferentesTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:br.com.treinaweb.selenium.tests.CadastroUsuarioTest@604ed9f0]" name="tearDown" is-config="true" duration-ms="1616" started-at="2018-07-13T18:48:38Z" finished-at="2018-07-13T18:48:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- br.com.treinaweb.selenium.tests.CadastroUsuarioTest -->
+      <class name="br.com.treinaweb.selenium.tests.UploadTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.treinaweb.selenium.tests.UploadTest@6a4f787b]" name="setUp" is-config="true" duration-ms="8170" started-at="2018-07-13T18:48:40Z" finished-at="2018-07-13T18:48:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setupPage()[pri:0, instance:br.com.treinaweb.selenium.tests.UploadTest@6a4f787b]" name="setupPage" is-config="true" duration-ms="3539" started-at="2018-07-13T18:48:48Z" finished-at="2018-07-13T18:48:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPage -->
+        <test-method status="PASS" signature="testUpload()[pri:0, instance:br.com.treinaweb.selenium.tests.UploadTest@6a4f787b]" name="testUpload" duration-ms="1647" started-at="2018-07-13T18:48:52Z" finished-at="2018-07-13T18:48:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUpload -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:br.com.treinaweb.selenium.tests.UploadTest@3bfdc050]" name="tearDown" is-config="true" duration-ms="1685" started-at="2018-07-13T18:27:23Z" finished-at="2018-07-13T18:27:25Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:br.com.treinaweb.selenium.tests.UploadTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1769" started-at="2018-07-13T18:48:53Z" finished-at="2018-07-13T18:48:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- br.com.treinaweb.selenium.tests.UploadTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Pagina de cadastro de usuarios -->
+  </suite> <!-- Teste de suites do TestNG -->
 </testng-results>

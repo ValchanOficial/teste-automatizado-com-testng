@@ -11,7 +11,8 @@ public class CadastroUsuarioTest extends TreinaWebSeleniumTestBase{
 	public void setupPage() {
 		setUrl("file:///C:/site-teste/teste-selenium.html");
 	}
-	@Test(priority = 2)
+	//@Test(priority = 2)
+	@Test
 	public void verificarEmailsDiferentesTest() {
 		getDriver().findElement(By.id("txb-email")).sendKeys("treinaweb@test.com");
 		getDriver().findElement(By.id("txb-confirmar-email")).sendKeys("diferentetreinaweb@test.com");
@@ -20,7 +21,8 @@ public class CadastroUsuarioTest extends TreinaWebSeleniumTestBase{
 		Assert.assertTrue(getDriver().findElement(By.id("div-val-email")).isDisplayed());
 		Assert.assertEquals(getDriver().findElement(By.id("div-val-email")).getText(),"Os e-mails devem ser iguais");
 	}
-	@Test(priority = 1)
+	//@Test(priority = 1)
+	@Test
 	public void verificarNomeTest() {
 		getDriver().findElement(By.id("txb-nome")).sendKeys("");
 		getDriver().findElement(By.id("btn-salvar")).click();
@@ -29,7 +31,8 @@ public class CadastroUsuarioTest extends TreinaWebSeleniumTestBase{
 		Assert.assertTrue(getDriver().findElement(By.id("txb-nome")).getAttribute("class").contains("is-invalid"));
 	}
 	
-	@Test(priority = 3)
+	//@Test(priority = 3)
+	@Test
 	public void verificarUsuarioPreenchidoTest() {
 		getDriver().findElement(By.id("txb-nome")).sendKeys("teste");
 		getDriver().findElement(By.id("txb-email")).sendKeys("teste@test.com");
