@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.treinaweb.selenium.tests.CadastroUsuarioTest">
+      <class name="br.com.treinaweb.selenium.tests.UploadTest">
         <methods>
+          <include name="testUpload"/>
           <include name="setupPage"/>
-          <include name="verificarUsuarioPreenchidoTest"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- br.com.treinaweb.selenium.tests.CadastroUsuarioTest -->
+      </class> <!-- br.com.treinaweb.selenium.tests.UploadTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
